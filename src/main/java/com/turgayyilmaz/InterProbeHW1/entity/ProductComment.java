@@ -27,10 +27,12 @@ public class ProductComment{
     private Date commentDate;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name="product_id", foreignKey = @ForeignKey(name="FK_PRODUCT_ID"))
     private Product product ;
 
     @ManyToOne
     @JoinColumn(name="user_id",foreignKey = @ForeignKey(name="FK_USER_ID"))
+    @JsonIgnore
     private User user ;
 }

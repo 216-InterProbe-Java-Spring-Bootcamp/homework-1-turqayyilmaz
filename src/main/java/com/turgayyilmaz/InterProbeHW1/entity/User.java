@@ -1,6 +1,7 @@
 package com.turgayyilmaz.InterProbeHW1.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import net.minidev.json.annotate.JsonIgnore;
@@ -15,6 +16,8 @@ import java.util.Set;
 @Table(name = "\"USER\"")
 @Getter
 @Setter
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","productCommentList"})
+
 public class User{
 
     @Id
@@ -36,9 +39,9 @@ public class User{
     @Column(name = "EMAIL", length = 50)
     private String email;
 
+    @JsonIgnore
     @OneToMany
     @JoinColumn(name="user_id",foreignKey = @ForeignKey(name="FK_USER_ID"))
-    @JsonIgnore
     private Set<ProductComment> productCommentList = new HashSet<>();
 
 

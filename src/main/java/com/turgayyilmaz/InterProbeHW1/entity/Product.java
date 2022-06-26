@@ -1,6 +1,7 @@
 package com.turgayyilmaz.InterProbeHW1.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import net.minidev.json.annotate.JsonIgnore;
@@ -15,6 +16,8 @@ import java.util.Set;
 @Table(name = "PRODUCT")
 @Getter
 @Setter
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","productComments"})
+
 public class Product  {
     @Id
     @GeneratedValue(generator = "Product")
