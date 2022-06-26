@@ -24,7 +24,7 @@ public class ProductComment{
 
     @Column(name = "COMMENT_DATE",nullable = true)
     @Temporal(TemporalType.DATE)
-    private Date expirationDate;
+    private Date commentDate;
 
     @ManyToOne
     @JoinColumn(name="product_id", foreignKey = @ForeignKey(name="FK_PRODUCT_ID"))

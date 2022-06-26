@@ -10,7 +10,7 @@ import java.util.List;
 public interface ProductCommentDao extends JpaRepository<ProductComment,Long> {
     List<ProductComment> findAllByProduct_Id(Long id);
 
-    List<ProductComment> findAllByProduct_IdAndCommentDateBetween(Long id, Date start, Date end);
+    List<ProductComment> findProductCommentsByCommentDateBetweenAndProduct_Id(Date start,Date end,Long id);
 
     List<ProductComment> findAllByUser_Id(Long id);
 
