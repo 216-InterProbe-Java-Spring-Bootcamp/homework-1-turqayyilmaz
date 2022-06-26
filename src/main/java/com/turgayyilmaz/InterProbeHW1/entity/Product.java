@@ -26,7 +26,7 @@ public class Product  {
     @Column(name = "NAME", nullable = false)
     private String name;
 
-    @Column(name = "Price", length = 50, nullable = false)
+    @Column(name = "PRICE", length = 50, nullable = false)
     private int price;
 
     @Column(name = "EXPIRATION_DATE")
